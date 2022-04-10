@@ -14,9 +14,11 @@ This will also help Steve use it with any other stock that he wants in the futur
 ## Results
 ### A more efficient code
 To be able to help Steve include the entire stock market over the last few years , we refactored the code (made the code more efficient), so that it runs faster (it takes less time to execute) and will not be affected in the future when Steve wants to add more data. 
+
 With the initial code we had, before it was refactored, our code run in 0.9765625 seconds for 2017 and 1.007813 seconds for the year 2018.
 
-ADD PICTURES HERE
+![Original_code_run_2017](https://github.com/kplazascp/stock-analysis/blob/main/Time_to_run_2017.PNG)
+![Original_code_run_2018](https://github.com/kplazascp/stock-analysis/blob/main/Time_to_run_2018.PNG)
 
 To be able to make the code more efficient, we created a tickerIndex variable set to zero before iterating all the rows
 `tickerIndex = 0`
@@ -82,13 +84,16 @@ Finally, we used a for loop to loop through all the arrays to output `Ticker`, `
 
 The result of the refactored code was that the year 2017 now runs in 0.15625 second and the year 2018 runs in 0.1484375 seconds.
 
+![VBA_Challenge_2017](https://github.com/kplazascp/stock-analysis/blob/main/VBA_Challenge_2017.PNG)
+![VBA_Challenge_2018](https://github.com/kplazascp/stock-analysis/blob/main/VBA_Challenge_2018.PNG)
+
 ### Stocks Results
 
-PICTURE 2017
+![Results_2017](https://github.com/kplazascp/stock-analysis/blob/main/Results_2017.PNG)
 
 With the refactored code we can evidence that for the year 2017, 11 out of 12 tickers had a positive return, except TERP that had -7.2%. The highest return (in percentage) was achieved by DQ, but the highest Total Daily Volume was achieved by SPWR with 782,187,000 and 23% of Return, and the second highest volume was FSLR with 684,181,400 and 100% of Return.
 
-PICTURE 2018
+![Results_2018](https://github.com/kplazascp/stock-analysis/blob/main/Results_2018.PNG)
 
 For the year 2018, we can evidence that it was not a very good year for green stocks, were 10 out of 12 stocks had a negative return. The highest return was of RUN with 84% and 502,757,100 Total daily Volume and ENPH with 82% and 607,473,500. 
 For DQ, that was the particular interest of Steve´s family the return for 2018 was of -62.6% with a Total Daily Volume of 107,873,900.
@@ -102,5 +107,5 @@ For DQ, that was the particular interest of Steve´s family the return for 2018 
 
 -The cons that apply to refactoring the original VBA script are that sometimes you have to forget about certain things that worked in your previous code (some, not all) that will not work in your new code. So, you will have some parts that you can adapt to your new code, but you have to see this new code as it is, a new code, not the original code.
 
-If you are having trouble refactoring your code, I attach here the link for the excel spreadsheet, where you can find the VBA script LINK HERE.
+If you are having trouble refactoring your code, I attach here the link for the excel spreadsheet, where you can find the VBA script [VBA_Challenge](https://github.com/kplazascp/stock-analysis/blob/main/VBA_Challenge.xmls.xlsm).
 
