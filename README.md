@@ -23,48 +23,60 @@ To be able to make the code more efficient, we created a tickerIndex variable se
 
 Then we created three output arrays: TicketVolumes, tickerStartingPrices and tickerEndingPrices
 
-`Dim tickerVolumes(12) As Long`
-`Dim tickerStartingPrices(12) As Single`
-`Dim tickerEndingPrices(12) As Single`
+```
+Dim tickerVolumes(12) As Long
+Dim tickerStartingPrices(12) As Single
+Dim tickerEndingPrices(12) As Single
+```
 
 After this, it is time to create a `for` loop that will initialize the `tickerVolumes` to zero
 
-`For i = 0 To 11`
-        `tickerVolumes(i) = 0`
-    `Next i`
+```
+For i = 0 To 11
+        tickerVolumes(i) = 0
+Next i
+```
     
 And created a `for` loop that will loop over all the rows in the spreadsheet, in this `for` loop, we will write a script that increases the current `tickerVolumes` (stock ticker volume) variable and adds the ticker volume for the current stock ticker.
 
-`''2b) Loop over all the rows in the spreadsheet. `
-    `For i = 2 To RowCount`
+```
+''2b) Loop over all the rows in the spreadsheet. 
+    For i = 2 To RowCount
     
-        `'3a) Increase volume for current ticker`
-        `tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(i, 8).Value`
-        
+        '3a) Increase volume for current ticker
+        tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(i, 8).Value
+```
+
 We then wrote an `if-then` statement to check if the current row is the last row and if it is, assign the current closing price. 
 
-`'3b) Check if the current row is the first row with the selected tickerIndex. `
-`If Cells(i - 1, 1).Value <> tickers(tickerIndex) And Cells(i, 1).Value = tickers(tickerIndex) Then`
-  `tickerStartingPrices(tickerIndex) = Cells(i, 6).Value`
-`End If`
+```
+'3b) Check if the current row is the first row with the selected tickerIndex. 
+If Cells(i - 1, 1).Value <> tickers(tickerIndex) And Cells(i, 1).Value = tickers(tickerIndex) Then
+  tickerStartingPrices(tickerIndex) = Cells(i, 6).Value
+End If
+```
 
 Then, we wrote a script that increases the `tickerIndex` if the next row´s ticker doesn´t match the previous row´s ticker
 
-`'If the next row’s ticker doesn’t match, increase the tickerIndex.`
-`'3d Increase the tickerIndex. `
-  `If Cells(i + 1, 1).Value <> tickers(tickerIndex) And Cells(i, 1).Value = tickers(tickerIndex) Then`
-      `tickerIndex = tickerIndex + 1`
-  `End If`
-`Next i`
+```
+'If the next row’s ticker doesn’t match, increase the tickerIndex.
+'3d Increase the tickerIndex. 
+  If Cells(i + 1, 1).Value <> tickers(tickerIndex) And Cells(i, 1).Value = tickers(tickerIndex) Then
+      tickerIndex = tickerIndex + 1
+  End If
+Next i
+```
 
 Finally, we used a for loop to loop through all the arrays to output `Ticker`, `Total Daily Volume` and `Return`
 
-`'4) Loop through your arrays to output the Ticker, Total Daily Volume, and Return. `
-    `For i = 0 To 11`
+```
+'4) Loop through your arrays to output the Ticker, Total Daily Volume, and Return. 
+    For i = 0 To 11
         
-        `Worksheets("All Stocks Analysis").Activate`
-        `Cells(4 + i, 1).Value = tickers(i) `
-       `Cells(4 + i, 2).Value = tickerVolumes(i) `
-        `Cells(4 + i, 3).Value = tickerEndingPrices(i) / tickerStartingPrices(i) - 1`
-   `Next i`
+        Worksheets("All Stocks Analysis").Activate
+        Cells(4 + i, 1).Value = tickers(i) 
+        Cells(4 + i, 2).Value = tickerVolumes(i) 
+        Cells(4 + i, 3).Value = tickerEndingPrices(i) / tickerStartingPrices(i) - 1
+   Next i
+```
 
