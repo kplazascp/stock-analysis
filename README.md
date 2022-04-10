@@ -80,3 +80,27 @@ Finally, we used a for loop to loop through all the arrays to output `Ticker`, `
    Next i
 ```
 
+The result of the refactored code was that the year 2017 now runs in 0.15625 second and the year 2018 runs in 0.1484375 seconds.
+
+### Stocks Results
+
+PICTURE 2017
+
+With the refactored code we can evidence that for the year 2017, 11 out of 12 tickers had a positive return, except TERP that had -7.2%. The highest return (in percentage) was achieved by DQ, but the highest Total Daily Volume was achieved by SPWR with 782,187,000 and 23% of Return, and the second highest volume was FSLR with 684,181,400 and 100% of Return.
+
+PICTURE 2018
+
+For the year 2018, we can evidence that it was not a very good year for green stocks, were 10 out of 12 stocks had a negative return. The highest return was of RUN with 84% and 502,757,100 Total daily Volume and ENPH with 82% and 607,473,500. 
+For DQ, that was the particular interest of Steve´s family the return for 2018 was of -62.6% with a Total Daily Volume of 107,873,900.
+
+## Summary
+-The advantages of refactoring code are that the more efficient code that you have, the better performance it will have. If we have the need to analyze thousands of data, we will not be able to do so with an inefficient code.
+
+-The disadvantages of refactoring code it that it takes more time, and time is an essential factor. When you have a code that runs perfectly, sometimes there are people that don’t see the need on refactoring their code. However, as we mentioned in the previous point, an inefficient code will only buy you some time and then it will stop working as you intended it to do.
+
+-To pros of refactoring the original VBA script is that we can see hand on hand the effect in time and resources that a refactored code has compared to the original code. Also, it gives us the opportunity to practice and apply all that we have learned in order to create a more optimized code.
+
+-The cons that apply to refactoring the original VBA script are that sometimes you have to forget about certain things that worked in your previous code (some, not all) that will not work in your new code. So, you will have some parts that you can adapt to your new code, but you have to see this new code as it is, a new code, not the original code.
+
+If you are having trouble refactoring your code, I attach here the link for the excel spreadsheet, where you can find the VBA script LINK HERE.
+
